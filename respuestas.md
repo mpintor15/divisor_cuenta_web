@@ -212,17 +212,27 @@ redondeo hacia arriba, commit `e3294b7`) no estaba en el plan, y por eso el plan
 
 ## 6. Artefacto más y menos reutilizable
 
-**Más reutilizable: la spec y los casos de prueba.**
-- Spec: 0 de 38 enunciados modificados; diff vacío; un solo commit.
-- Casos: los 6 casos idénticos en valores y mensajes; solo cambió la sintaxis del archivo.
-- La constitución también viajó bien (7 idénticas y 8 adaptadas de 17, y 0 con librerías).
+Medida usada: líneas modificadas por `git diff --no-index --stat` entre el artefacto de Flutter y el
+de React (inserciones + eliminaciones), junto con la lectura de qué cambió.
 
-**Menos reutilizable: el código, seguido del plan y de las tareas.**
-- Código: 0 líneas reutilizadas (Dart → JavaScript/JSX); la lógica se reescribió módulo por módulo
-  (263 líneas en `src/` frente a 294 en `lib/`).
-- Plan: 126 líneas modificadas; ≈ 86 % de sus enunciados cambiaron.
-- Tareas: ≈ 210 líneas modificadas sobre 194 → 200 (el archivo se regeneró entero); 29 tareas en
-  Flutter frente a 39 en React.
+| Artefacto | Líneas modificadas | Lectura |
+|---|---:|---|
+| **Spec** (`spec.md`) | **0** | Viaja intacta (diff vacío, SHA-1 igual). |
+| **Casos de prueba** | **0 en valores** | Los 6 casos son idénticos en nombres, entradas, esperados y mensajes; solo cambia la sintaxis del archivo (`.dart` → `.js`). |
+| **Constitución** | 28 + 36 = 64 | 7 reglas idénticas y 8 adaptadas de 17; solo 1 reemplazada y 1 omitida. Conserva los principios. |
+| `quickstart.md` | 31 + 24 = 55 | Se reescribe lo tecnológico (comandos, herramientas). |
+| `data-model.md` | 52 + 57 = 109 | Cambia el lenguaje de las entidades y la estructura de la validación. |
+| **Plan** (`plan.md`) | 65 + 61 = **126** | ≈ 86 % de sus enunciados cambiaron (estimación). |
+| `research.md` | 60 + 60 = 120 | Decisiones técnicas rehechas casi todas. |
+| **Tareas** (`tasks.md`) | 108 + 102 = **210** | Se regeneró entero: 29 tareas en Flutter frente a 39 en React. |
+| **Código** | **todo** | Dart → JavaScript/JSX: 0 líneas reutilizadas (263 en `src/` frente a 294 en `lib/`). |
+
+**Más reutilizable: la spec y los casos de prueba.** Son el QUÉ: describen comportamiento, mensajes
+y reglas, y no nombran ninguna tecnología. La constitución viene justo después: los principios
+viajan y solo se reescriben nombres dependientes del lenguaje.
+
+**Menos reutilizable: el código, seguido de las tareas y del plan.** Son el CÓMO. Las tareas son lo
+que más cambia en líneas porque se regeneran enteras a partir del plan.
 
 ```text
 $ git diff --no-index --stat -- <flutter>/tasks.md specs/001-divisor-cuenta/tasks.md
@@ -233,9 +243,15 @@ $ git diff --no-index --stat -- <flutter>/research.md specs/001-divisor-cuenta/r
 
 **Matiz importante.** La hipótesis «el QUÉ viaja y el CÓMO se rehace» se cumplió, pero hubo
 conocimiento que quedó **solo en el código** y no viajó con los artefactos: el margen `1e-9` del
-redondeo hacia arriba. Lo detectó `/speckit-analyze` (B1) porque el plan React lo había resuelto
-de otra forma; sin ese paso, el cambio de comportamiento habría pasado a código. Y la spec trae
-sus propios defectos (F1, B2), que migrar a otra tecnología no arregla ni empeora.
+redondeo hacia arriba (`ceil(v - 1e-9)`, commit `e3294b7` de la rama `sdd` de Flutter). El plan
+React lo resolvió de otra forma (normalizar a centavos antes del `ceil`), que daba 2 para 2.001 y
+contradecía FR-009. Lo detectó `/speckit-analyze` (hallazgo B1) y se corrigió antes de
+implementar. Sin ese paso, el cambio de comportamiento habría pasado al código sin que nadie lo
+notara. Es evidencia de que la separación QUÉ/CÓMO funciona, pero también de que el plan debe
+registrar las decisiones que se descubren al implementar, o se pierden al migrar.
+
+Y la spec trae sus propios defectos (F1 y B2, ver pregunta 3), que migrar a otra tecnología no
+arregla ni empeora.
 
 ---
 
