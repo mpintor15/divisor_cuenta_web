@@ -4,6 +4,9 @@
 > (diffs, pruebas, historial de Git y transcripciones de la sesión). Cada cifra puede
 > comprobarse con los comandos indicados. El estudiante debe leerlo, ajustar la interpretación
 > y declarar qué partes del trabajo hizo el agente (ver «Declaración de método» al final).
+> **Repositorios:** [divisor_cuenta (Flutter, rama `sdd`)](https://github.com/mpintor15/divisor_cuenta/tree/sdd) ·
+> [divisor_cuenta_web (React)](https://github.com/mpintor15/divisor_cuenta_web)
+>
 > Evidencia completa y diffs: [`evidencia_parte8.md`](evidencia_parte8.md). Clasificación
 > enunciado por enunciado: [`analisis_spec.md`](analisis_spec.md). Bitácora: [`bitacora.md`](bitacora.md).
 
