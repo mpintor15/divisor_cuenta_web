@@ -191,31 +191,24 @@ $ git diff --no-index --stat -- ../divisor_cuenta/specs/001-divisor-cuenta/plan.
  1 file changed, 65 insertions(+), 61 deletions(-)
 ```
 
-Ejemplos concretos (más de tres):
+Cinco ejemplos concretos, con la cita de cada plan:
 
-1. **Plataforma y compilación.** «Target Platform: Android e iOS; comprobación de construcción
-   `flutter build apk --debug`» → «Navegador web moderno» y `npm run build`. Dejó de tener sentido
-   todo lo relativo a móvil.
-2. **Estado.** «estado local con `setState`» → `useState` dentro del hook `useDivisor`.
-3. **Pruebas.** `flutter_test` con pruebas de widget → Vitest + jsdom + Testing Library.
-4. **Contrato de redondeo.** «el redondeo es una interfaz de un solo método con dos implementaciones»
-   (`EstrategiaRedondeo`, `implements`) → en JavaScript no hay interfaces: el contrato es un
-   objeto con `aplicar(valor)` y una función `esEstrategiaValida`.
-5. **Estructura de archivos.** `lib/**/*.dart` en `snake_case` → `src/**/*.js(x)` en `camelCase`;
-   `main.dart` → `main.jsx`.
-6. **Dónde vive la lectura del texto.** El plan Flutter ponía `LectorNumeros` en `presentation`
-   (convertir texto → número, «sin darle al `domain` la responsabilidad de interpretar texto»). En React la
-   conversión quedó en `domain` (`validarEntrada` recibe los textos, decisión D1 de `research.md`).
-7. **Documentación.** Flutter: «No hay `contracts/`». React: carpeta `contracts/` con dos archivos.
-8. **Regla de arquitectura ejecutable.** React añadió pruebas Vitest que leen los archivos y fallan
-   si `domain` importa `react` (research D8); en Flutter la verificación era por `grep`.
-9. **Decisión que vivía en el código.** En Flutter el redondeo hacia arriba se arregló con un
-   margen `ceil(v - 1e-9)` (commit `e3294b7`), pero esa decisión **no estaba en el plan**; el plan
-   React la reinventó distinto (normalizar a centavos) y `/speckit-analyze` lo detectó (B1).
+| # | Qué dejó de tener sentido | Plan Flutter | Plan React | Cómo se adaptó |
+|---|---|---|---|---|
+| 1 | **Plataforma y compilación móvil** | «Target Platform: Android e iOS (la comprobación de construcción es `flutter build apk --debug`)»; «Project Type: mobile-app» | «Target Platform: Navegador web moderno; funciona sin conexión»; «Project Type: web-app de una sola pantalla (frontend únicamente)» | Desaparece todo lo móvil. El plan React ya no menciona un comando de construcción; `npm run build` solo aparece después, como tarea T035. |
+| 2 | **Gestión del estado** | «estado local con `setState`» (restricción) | «El estado de la pantalla es local (`useState`) dentro del hook `useDivisor`» | El estado pasa a un hook que recibe sus dependencias por parámetro. |
+| 3 | **Herramienta de pruebas** | «`flutter_test` (pruebas de `domain` en Dart puro y pruebas de widget)» | «Vitest (+ jsdom y @testing-library/react solo para probar el hook y la pantalla)» | Cambia el runner, las librerías y el entorno (`jsdom`); las pruebas de dominio siguen siendo puras. |
+| 4 | **Contrato de redondeo** | «el redondeo es una interfaz de un solo método con dos implementaciones» (`EstrategiaRedondeo`, `implements`) | «Contrato de estrategia = 1 método»; `estrategiaRedondeo.js`: «contrato: aplicar(valor) + verificación de forma» | JavaScript no tiene interfaces: el contrato es un objeto con `aplicar(valor)` y una función que comprueba su forma. |
+| 5 | **Dónde se lee el texto escrito** | `lector_numeros.dart` en `presentation`: «solo convierte texto en números (punto o coma)», justificado como «una clase adicional en `presentation` (`LectorNumeros`)» | «El dominio es JavaScript puro: valida y convierte la entrada»; `validarEntrada.js`: «textos crudos -> Cuenta, o ErrorDeEntrada con el mensaje» | La conversión pasó a `domain` y se eliminó la clase intermedia. Es un cambio de **diseño**, no solo de sintaxis. |
 
-Cómo se adaptaron: cada fila de la tabla «Constitution Check» del plan se reescribió con la
-terminología de React (módulos y funciones en lugar de clases; `main.jsx` en lugar de
-`main.dart`), y las tareas siguieron el mismo reparto por historias de usuario.
+Cómo se adaptó el resto: cada fila de la tabla «Constitution Check» del plan se reescribió con la
+terminología de React (módulos y funciones en lugar de clases; `main.jsx` en lugar de `main.dart`),
+y la estructura de archivos pasó de `lib/**/*.dart` en `snake_case` a `src/**/*.js(x)` en `camelCase`.
+Las tareas siguieron el mismo reparto por historias de usuario.
+
+Un efecto menos obvio: una decisión que estaba **solo en el código Flutter** (el margen `1e-9` del
+redondeo hacia arriba, commit `e3294b7`) no estaba en el plan, y por eso el plan React propuso otra
+(hallazgo B1). Esto se desarrolla en la pregunta 6.
 
 ## 6. Artefacto más y menos reutilizable
 
