@@ -154,7 +154,9 @@ pide para React (Parte 4). 17 reglas:
 | 16 | Gobernanza: antes de terminar, `flutter analyze`, `flutter test` y los grep | **Reemplazada** | `flutter analyze/test` no existen en React; equivalentes `npm test`, `npm run build` y `git grep`. No se puede conservar el comando, sí la regla "verificar antes de cerrar" |
 | 17 | Gobernanza: la guía del agente está en `CLAUDE.md` | **Idéntica** | Mismo agente (Claude Code) |
 
-Resumen: **8 idénticas (47 %) · 8 adaptadas (47 %) · 1 reemplazada (6 %)**. No hay ninguna regla
+Resumen (previsión): **8 idénticas (47 %) · 8 adaptadas (47 %) · 1 reemplazada (6 %)**.
+
+**Resultado real con la constitución React generada (`.specify/memory/constitution.md`):** 7 idénticas · 8 adaptadas · 1 reemplazada (la 16: el agente la sustituyó por «las specs, planes y revisiones MUST verificar el cumplimiento», sin comandos) · 1 omitida (la 17, la referencia a `CLAUDE.md`, que no existe en el proyecto web). Regla nueva sin equivalente generada por el agente: ninguna aparte de la redacción de la 16. No hay ninguna regla
 Riverpod ni de otra librería: la constitución de Flutter ya era casi agnóstica.
 
 ### Aviso para la Parte 4

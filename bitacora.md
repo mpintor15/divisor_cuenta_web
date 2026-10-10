@@ -54,10 +54,10 @@ Fuente de las horas: marcas de tiempo de la transcripción de la sesión de Clau
 | **Minutos hasta que pasan los 6 casos** | no registrado (ver nota) | |
 | Iteraciones con el agente | no registrado para `sdd` (la tabla del lab quedó vacía) | |
 | Líneas de código escritas a mano | no registrado | |
-| Enunciados modificados en la spec | — | _Parte 8_ (hoy: 0) |
-| Enunciados modificados en la Constitution | — | _Parte 8_ |
-| Líneas modificadas en el plan | — | _Parte 8_ |
-| Casos de aceptación que pasan (0–6) | 6 (`flutter test`: 10/10 verde) | _Parte 7_ |
+| Enunciados modificados en la spec | — | 0 de 38 (diff vacío; `evidencia_parte8.md`) |
+| Enunciados modificados en la Constitution | — | 9 de 17 reglas (8 adaptadas + 1 reemplazada); además 1 omitida y 1 añadida por el agente (ver `analisis_spec.md`) |
+| Líneas modificadas en el plan | — | 126 líneas (65 añadidas, 61 eliminadas) sobre 105 → 109; casi todo el plan. Conteo por enunciados: pendiente |
+| Casos de aceptación que pasan (0–6) | 6 (`flutter test`: 10/10 verde) | 6 (`npm test`: 45/45 verde) |
 
 **Nota sobre el tiempo Flutter:** el laboratorio no registró cronómetro. Los commits de la rama
 `sdd` solo dan una referencia indirecta (no es un tiempo medido por mí y no debe usarse para
