@@ -123,6 +123,13 @@ Otras observaciones relevantes:
 - **B1** (no es de la spec): el plan inicial normalizaba a centavos antes del `ceil`, lo que daba 2
   para 2.001 y contradecía FR-009. Se corrigió en el plan (iteración 2) antes de implementar.
 
+**Por qué F1 y B2 no se corrigieron.** El protocolo de la Parte 8.1 (documentar, commit separado,
+antes y después) solo aplica cuando un enunciado **bloquea** planificar React. Ni F1 ni B2 bloquearon
+nada: son defectos de la propia spec, presentes igual en la versión Flutter, y las tareas ya cubrían
+los 11 escenarios. Corregirlos habría bajado el porcentaje de la spec reutilizada sin cambios por una
+razón ajena a la tecnología, así que se reportan como hallazgos y la copia queda intacta. La migración
+no los arregla ni los empeora.
+
 No hay versión «antes / después» de la spec porque no hubo cambio.
 
 ## 4. Los seis casos de aceptación: ¿cambió algo?
