@@ -66,6 +66,27 @@ del laboratorio) con la generada para React.
 | **Reemplazada** | 1 | «Antes de dar por terminado un cambio MUST ejecutarse `flutter analyze` y `flutter test`, y las verificaciones por `grep`» → en React solo queda «Las specs, planes y revisiones MUST verificar el cumplimiento de estos principios», sin comandos. Los comandos de Flutter no se pueden conservar (no existen en React); la regla «verificar antes de cerrar» se debilitó. |
 | **Omitida** | 1 | «La guía de trabajo del agente está en `CLAUDE.md`»: el proyecto web no tiene `CLAUDE.md` y el prompt del enunciado no lo pedía. |
 
+**Evidencia lado a lado de las 8 reglas adaptadas** (Flutter `v1.0.0` → React):
+
+| Regla | Constitución Flutter | Constitución React |
+|---|---|---|
+| SRP | «una clase, una razón de cambio. El cálculo MUST NOT validar ni formatear» | «una función o módulo tiene una sola razón de cambio. El cálculo no valida ni formatea» |
+| OCP | «MUST NOT obligar a editar las clases que ya existen; basta con crear una clase nueva que implemente la interfaz» | «MUST NOT obligar a editar los módulos que ya existen» |
+| LSP | «cualquier implementación de una interfaz MUST poder sustituir a otra» | «cualquier implementación de la interfaz de redondeo MUST poder sustituir a otra» |
+| ISP | «las interfaces MUST ser pequeñas; nadie depende de métodos que no usa» | «las interfaces son pequeñas; ningún módulo depende de funciones que no usa» |
+| DIP | «nunca de clases concretas de `data`» | «nunca de implementaciones concretas de `data`» |
+| Capas | «`lib/presentation`, `lib/domain` y `lib/data`» | «`src/presentation`, `src/domain` y `src/data`» |
+| Dominio puro | «`lib/domain/` MUST ser Dart puro: no importa `package:flutter`» | «`src/domain/` MUST NOT importar `react` ni nada del DOM: es JavaScript puro» |
+| Composición | «`main.dart` MUST ser el ÚNICO lugar donde se instancian implementaciones concretas» | «`src/main.jsx` es el ÚNICO lugar donde se instancian implementaciones concretas» |
+
+**Por qué se adaptan y no se reemplazan:** cada regla protege lo mismo (una sola responsabilidad,
+dependencias hacia el dominio, composición en un único punto). Cambian los nombres que dependen del
+lenguaje (clase/módulo, interfaz/contrato, `lib/`/`src/`, `package:flutter`/`react`). Una observación
+de detalle: en varias reglas React el agente usó una formulación menos normativa que Flutter (por
+ejemplo «es» en lugar de «MUST ser» en la composición, «son pequeñas» en lugar de «MUST ser
+pequeñas» en ISP). Esa redacción viene del prompt de la Parte 4, no de una decisión del agente, y
+no cambia la idea, pero sí el rigor con que está dicha.
+
 - **Reglas nuevas inventadas por el agente:** ninguna con contenido propio. El agente añadió una
   sección «Governance» que el prompt no incluía; equivale a las reglas de gobernanza de Flutter,
   con la regla de verificación reducida (fila «Reemplazada»).
