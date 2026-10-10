@@ -1,7 +1,7 @@
 # analisis_spec.md — ¿Qué viaja de Flutter a React?
 
-> **BORRADOR para revisión.** Clasificación hecha por el agente a partir de los archivos del
-> laboratorio; el estudiante debe contrastarla con su propio juicio antes de entregarla.
+> Elaborado con ayuda de un agente de código (Claude Code) a partir de los archivos del laboratorio;
+> ver la «Declaración de método» en `respuestas.md`.
 > Rutas de la Parte 1 relativas a `../divisor_cuenta` (repo Flutter).
 
 ## Parte 1 — Artefactos localizados (rama `sdd` de `divisor_cuenta`)

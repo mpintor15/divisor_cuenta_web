@@ -1,9 +1,8 @@
 # respuestas.md — Deber 2: Flutter → React con SDD
 
-> **BORRADOR para revisión del estudiante.** Lo redactó el asistente a partir del repositorio
-> (diffs, pruebas, historial de Git y transcripciones de la sesión). Cada cifra puede
-> comprobarse con los comandos indicados. El estudiante debe leerlo, ajustar la interpretación
-> y declarar qué partes del trabajo hizo el agente (ver «Declaración de método» al final).
+> Documento elaborado con ayuda de un agente de código (Claude Code); la parte que hizo el agente y
+> la que decidió el estudiante están en la «Declaración de método» al final. Cada cifra puede
+> comprobarse con los comandos indicados y con la evidencia del repositorio.
 >
 > **Repositorios:** [divisor_cuenta (Flutter, rama `sdd`)](https://github.com/mpintor15/divisor_cuenta/tree/sdd) ·
 > [divisor_cuenta_web (React)](https://github.com/mpintor15/divisor_cuenta_web)
@@ -280,8 +279,8 @@ desconectó la red físicamente).
 ## Declaración de método
 
 - **Hecho por el agente:** constitución, plan, tareas, implementación y pruebas (flujo Spec Kit);
-  además, el borrador de `analisis_spec.md`, la copia de `test/casosDePrueba.js` desde el
-  enunciado (Parte 7.2, que pedía escribirlo a mano) y este borrador de `respuestas.md`.
+  además, la primera versión de `analisis_spec.md`, la copia de `test/casosDePrueba.js` desde el
+  enunciado (Parte 7.2, que pedía escribirlo a mano) y la redacción inicial de este documento.
 - **Decidió el estudiante:** cuándo avanzar cada paso, los prompts enviados y la aceptación de las
   correcciones propuestas (iteraciones 1 y 2).
 - **Decisiones del estudiante sobre la medición:** cuentan 3 iteraciones (la del reenvío de B1 sin efecto
