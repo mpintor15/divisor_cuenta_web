@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Skills locales de Spec Kit (no se versionan)
+.claude/
