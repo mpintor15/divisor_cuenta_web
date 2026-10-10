@@ -165,6 +165,19 @@ Coma decimal, monto ≤ 0, propina inválida y personas inválido no tenían pru
 React sí están cubiertos (45 pruebas), por lo que «6/6» no equivale a «toda la spec cumplida»;
 lo que se comprobó además es el resto de escenarios y la verificación manual de `quickstart.md`.
 
+Dos matices sobre cómo se ejecutan los 6 casos en React:
+
+- **Un `it()` por caso solo en parte.** Los casos 1, 2 y 5 tienen su propia prueba (con `caso.nombre`);
+  los casos 3 y 4 (los de error) se recorren dentro de una sola prueba y el 6 tiene una prueba
+  aparte. No se aplicó el ajuste opcional de la Parte 7.3 (un `it()` por cada uno y una prueba de
+  LSP con el mismo `calcularDivision` y las dos estrategias); en su lugar hay pruebas de contrato
+  por estrategia. Los seis siguen pasando; la diferencia es de organización de las pruebas.
+- **El único cambio de comportamiento que casi ocurre no afecta a los 6 casos.** El plan inicial
+  daba 2 para 2.001 en modo «hacia arriba» (hallazgo B1). Los valores esperados de los 6 casos no
+  se veían afectados (ninguno usa esa entrada), y el error de diseño del plan se corrigió antes de
+  implementar y se fijó con una prueba (2.001 → 3). Fue un error de diseño del plan, no una
+  necesidad de la tecnología.
+
 ## 5. ¿Qué partes del plan Flutter dejaron de tener sentido en React?
 
 El plan cambió casi por completo: **126 líneas modificadas** (65 añadidas, 61 eliminadas) sobre
