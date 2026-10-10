@@ -75,7 +75,7 @@ Datos del código Flutter para contexto (no son métricas de este deber): `lib/`
 | 1 Ubicar artefactos | Hecha | Rutas en `analisis_spec.md` |
 | 2 Separar QUÉ/CÓMO | Borrador hecho | `analisis_spec.md`; pendiente revisión del estudiante |
 | 3 Proyecto React + Spec Kit + spec copiada | Hecha | Commits `7d7ef88` y `f528793`; se añadió `.specify/feature.json` |
-| 4 Constitución | Hecha | Comparar con la de Flutter: 8 idénticas / 8 adaptadas / 1 reemplazada (esperado). Revisar si aparece Gobernanza inventada |
+| 4 Constitución | Hecha | Resultado real: 7 idénticas / 8 adaptadas / 1 reemplazada / 1 omitida. Gobernanza añadida por el agente (ver `respuestas.md`, pregunta 2) |
 | 5 Plan, tareas, analyze | Hecha | ¿`/speckit-analyze` encontró contradicciones con la spec? |
 | 6 Implement + converge | Hecha ("Converged", 19:35) | ¿Existe `/speckit-converge`? (sí aparece en `.claude/skills`) |
 | 7 Vitest, 6 casos, pantalla, SOLID, build | Hecha | 45/45 pruebas; build y lint limpios; ajuste opcional de 7.3 no aplicado |
