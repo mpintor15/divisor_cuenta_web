@@ -29,8 +29,8 @@
 |---|---|---|---|
 | 1 | 12:14:04 | Corregir `tests/` → `test/` en plan y artefactos del feature; quitar el comentario "Sync Impact Report" de la constitución | El plan no coincidía con las rutas del enunciado (`test/setup.js`, `test/casosDePrueba.js`…) |
 | 2 | 9-oct 18:11:04 | Corregir B1 en el plan y las tareas: `redondeoHaciaArriba` con `Math.ceil(valor - 1e-9)`, caso 2.001 → 3, jest-dom en D9 (I1) | Hallazgo B1 de `/speckit-analyze`: el plan normalizaba a centavos y contradecía FR-009 |
-| 3 | 9-oct 19:29:43 | _(propuesta)_ Mismo mensaje de B1 reenviado por error | El agente verificó que ya estaba aplicado y no cambió nada. Decidir si cuenta (se envió un mensaje) o se descarta (sin efecto) |
-| 4 | 9-oct 19:30:11 | _(propuesta)_ `/speckit-implement` para cerrar las tareas T038 y T039 que añadió `/speckit-converge` | Brechas de convergencia: comentarios faltantes (F1) y `public/icons.svg` sin uso (F2) |
+| — | 9-oct 19:29:43 | Mismo mensaje de B1 reenviado por error | **No cuenta**: el agente comprobó que ya estaba aplicado y no cambió nada |
+| 3 | 9-oct 19:30:11 | `/speckit-implement` para cerrar las tareas T038 y T039 que añadió `/speckit-converge` | Brechas de convergencia: comentarios faltantes (F1) y `public/icons.svg` sin uso (F2) |
 
 Sin contar: `/speckit-tasks` (18:04:57), `/speckit-analyze` (18:06:41), `/speckit-implement` inicial (18:12:19), `/speckit-converge` (19:23:11). Un segundo `/speckit-converge` (19:30:38) se interrumpió y está pendiente de repetir.
 
@@ -52,8 +52,8 @@ Fuente de las horas: marcas de tiempo de la transcripción de la sesión de Clau
 |---|---:|---:|
 | Minutos hasta la primera versión que compila | no registrado | |
 | **Minutos hasta que pasan los 6 casos** | no registrado (ver nota) | |
-| Iteraciones con el agente | no registrado para `sdd` (la tabla del lab quedó vacía) | |
-| Líneas de código escritas a mano | no registrado | |
+| Iteraciones con el agente | no registrado para `sdd` (la tabla del lab quedó vacía) | **3** |
+| Líneas de código escritas a mano | no registrado | **0** |
 | Enunciados modificados en la spec | — | 0 de 38 (diff vacío; `evidencia_parte8.md`) |
 | Enunciados modificados en la Constitution | — | 9 de 17 reglas (8 adaptadas + 1 reemplazada); además 1 omitida y 1 añadida por el agente (ver `analisis_spec.md`) |
 | Líneas modificadas en el plan | — | 126 líneas (65 añadidas, 61 eliminadas) sobre 105 → 109; casi todo el plan. Conteo por enunciados: pendiente |
@@ -75,11 +75,11 @@ Datos del código Flutter para contexto (no son métricas de este deber): `lib/`
 | 1 Ubicar artefactos | Hecha | Rutas en `analisis_spec.md` |
 | 2 Separar QUÉ/CÓMO | Borrador hecho | `analisis_spec.md`; pendiente revisión del estudiante |
 | 3 Proyecto React + Spec Kit + spec copiada | Hecha | Commits `7d7ef88` y `f528793`; se añadió `.specify/feature.json` |
-| 4 Constitución | | Comparar con la de Flutter: 8 idénticas / 8 adaptadas / 1 reemplazada (esperado). Revisar si aparece Gobernanza inventada |
-| 5 Plan, tareas, analyze | | ¿`/speckit-analyze` encontró contradicciones con la spec? |
-| 6 Implement + converge | | ¿Existe `/speckit-converge`? (sí aparece en `.claude/skills`) |
-| 7 Vitest, 6 casos, pantalla, SOLID, build | | |
-| 8 Diffs y métricas | | |
+| 4 Constitución | Hecha | Comparar con la de Flutter: 8 idénticas / 8 adaptadas / 1 reemplazada (esperado). Revisar si aparece Gobernanza inventada |
+| 5 Plan, tareas, analyze | Hecha | ¿`/speckit-analyze` encontró contradicciones con la spec? |
+| 6 Implement + converge | Hecha ("Converged", 19:35) | ¿Existe `/speckit-converge`? (sí aparece en `.claude/skills`) |
+| 7 Vitest, 6 casos, pantalla, SOLID, build | Hecha | 45/45 pruebas; build y lint limpios; ajuste opcional de 7.3 no aplicado |
+| 8 Diffs y métricas | Hecha | `evidencia_parte8.md` |
 
 ## Verificaciones (Parte 7.6)
 
@@ -96,12 +96,12 @@ Datos del código Flutter para contexto (no son métricas de este deber): `lib/`
 
 | # | Entrada | Esperado | Flutter | React |
 |---|---|---|:-:|:-:|
-| 1 | 100.00, 4 personas, 10 %, exacto | 27.50 | ✅ | |
-| 2 | 90.00, 3 personas, 0 %, exacto | 30.00 | ✅ | |
-| 3 | 50.00, 0 personas | "Debe haber al menos una persona", sin resultado | ✅ | |
-| 4 | monto "abc" | "Monto inválido" | ✅ | |
-| 5 | 10.00, 3 personas, 0 %, exacto | 3.33 | ✅ | |
-| 6 | 10.00, 3 personas, 0 %, hacia arriba | 4.00 | ✅ | |
+| 1 | 100.00, 4 personas, 10 %, exacto | 27.50 | ✅ | ✅ |
+| 2 | 90.00, 3 personas, 0 %, exacto | 30.00 | ✅ | ✅ |
+| 3 | 50.00, 0 personas | "Debe haber al menos una persona", sin resultado | ✅ | ✅ |
+| 4 | monto "abc" | "Monto inválido" | ✅ | ✅ |
+| 5 | 10.00, 3 personas, 0 %, exacto | 3.33 | ✅ | ✅ |
+| 6 | 10.00, 3 personas, 0 %, hacia arriba | 4.00 | ✅ | ✅ |
 
 Recordatorio (hallazgo H2 de `analisis_spec.md`): la spec tiene 10 escenarios distintos, no 6. Coma
 decimal, monto ≤ 0, propina inválida y personas inválido no tienen prueba en Flutter.

@@ -13,8 +13,8 @@
 |---|---:|---:|
 | Minutos hasta la primera versión que compila | no registrado | 1807 min de reloj (30 h 07 m, incluye una pausa de más de 24 h); ≈ 16 min 45 s dentro de las sesiones del agente |
 | Minutos hasta que pasan los 6 casos | no registrado | igual que arriba (9-oct 18:18:22; las 45 pruebas, 18:18:42) |
-| Iteraciones con el agente | no registrado para `sdd` | 2 seguras (12:14 y 18:11) y 2 en discusión (ver bitácora) |
-| Líneas escritas a mano | no registrado | _completar: el estudiante no editó código a mano que yo sepa_ |
+| Iteraciones con el agente | no registrado para `sdd` | **3** (8-oct 12:14; 9-oct 18:11 y 19:30). El reenvío del 19:29 no cuenta: no produjo cambios |
+| Líneas escritas a mano | no registrado | **0** |
 | Enunciados modificados en la spec | — | **0 de 38** |
 | Enunciados modificados en la Constitution | — | **9 de 17** (8 adaptadas + 1 reemplazada) |
 | Líneas modificadas en el plan | — | **126** (65 añadidas, 61 eliminadas) |
@@ -280,7 +280,7 @@ desconectó la red físicamente).
   enunciado (Parte 7.2, que pedía escribirlo a mano) y este borrador de `respuestas.md`.
 - **Decidió el estudiante:** cuándo avanzar cada paso, los prompts enviados y la aceptación de las
   correcciones propuestas (iteraciones 1 y 2).
-- **Pendiente de decidir:** si las iteraciones 3 y 4 cuentan, el criterio de reporte del tiempo
-  y la revisión final de `analisis_spec.md` y de este documento.
+- **Decisiones del estudiante sobre la medición:** cuentan 3 iteraciones (la del reenvío de B1 sin efecto
+  no cuenta), 0 líneas escritas a mano y se reportan los dos tiempos (reloj y sesiones).
 - Las tareas `T009` y `T037` se omitieron a propósito (instrucción del estudiante en el prompt de
   `/speckit-implement`).
