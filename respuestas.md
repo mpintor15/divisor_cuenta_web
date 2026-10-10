@@ -30,10 +30,13 @@ Se analizaron **38 enunciados atómicos** (criterios de conteo y tabla completa 
 
 | Lectura | Intacto | Con adaptación | No viaja | % CÓMO |
 |---|---:|---:|---:|---:|
-| A — por contenido | 38 (100 %) | 0 | 0 | **0 %** |
-| B — estricta por redacción | 24 (63 %) | 14 (37 %) | 0 | **0 %** |
+| **B — estricta por redacción (cifra principal)** | **24 (63 %)** | **14 (37 %)** | 0 (0 %) | **0 %** |
+| A — solo por contenido (contraste) | 38 (100 %) | 0 | 0 | 0 % |
 
-- En la lectura B, los 14 enunciados con adaptación son los que usan vocabulario táctil/móvil
+Se adopta la lectura B como cifra principal por ser la conservadora: cuenta como adaptación todo
+enunciado cuya redacción habría que cambiar al pasar de móvil a web, aunque su contenido no cambie.
+
+- Los 14 enunciados con adaptación (lectura B) son los que usan vocabulario táctil/móvil
   («toca», «un solo toque», «dispositivo»). Es vocabulario de **plataforma** (móvil), no de
   Flutter: ningún enunciado nombra Flutter, Dart, widgets ni librerías.
 - El umbral pedagógico de 30 % **no se supera** (0 %). Es un umbral de este deber, no una regla
@@ -49,7 +52,7 @@ $ git log --oneline -- specs/001-divisor-cuenta/spec.md
 f528793 spec kit + la misma spec del proyecto flutter      (un solo commit)
 ```
 
-Tiempo, como contexto: ver la tabla de métricas. No se interpreta como criterio de calidad.
+Tiempo, como contexto (no como criterio de calidad): desde `/speckit-plan` (8-oct 12:11:14) hasta los 6 casos en verde (9-oct 18:18:22) pasaron **30 h 07 m de reloj**, que incluyen una pausa de más de 24 h entre sesiones; dentro de las sesiones del agente fueron ≈ **16 min 45 s**. Ninguna de las dos cifras mide la calidad de la reutilización; la de Flutter no se registró, así que no hay comparación.
 
 ## 2. Constitution: idéntica / adaptada / reemplazada
 

@@ -89,8 +89,8 @@ Para la Parte 3.4 el `spec.md` a copiar es `specs/001-divisor-cuenta/spec.md` (e
 **MIXTO** (la idea viaja, la palabra cambia a "clic"/"dispositivo→navegador"):
 - 24 intactos (63 %) · 14 con adaptación (37 %) · 0 no viajan · % CÓMO = **0 %**.
 
-Recomendación: reportar la Lectura B como cifra conservadora y mencionar la A. Decisión del
-estudiante. En ambas lecturas el % CÓMO es 0 %.
+Decisión del estudiante: se reporta la Lectura B como cifra principal (conservadora) y se menciona la A
+como contraste. En ambas lecturas el % CÓMO es 0 %.
 
 ### Hallazgos
 

@@ -119,5 +119,5 @@ decimal, monto ≤ 0, propina inválida y personas inválido no tienen prueba en
 
 - **Tiempo de reloj** desde `/speckit-plan` (8-oct 12:11:14) hasta los 6 casos en verde (9-oct 18:18:22): **30 h 07 m**. Incluye una pausa de más de 24 h entre sesiones y no es una medida de esfuerzo.
 - **Tiempo dentro de las sesiones del agente:** sesión 1 (8-oct 12:11:14 → 12:14:34) ≈ 3 m 20 s; sesión 2 (9-oct 18:04:57 → 18:18:22) ≈ 13 m 25 s. Suma ≈ **16 m 45 s**, con pausas cortas de lectura entre mensajes. Es una referencia descriptiva, no el criterio del enunciado.
-- Criterio elegido para reportar: _pendiente de decidir por el estudiante_.
+- Criterio elegido para reportar: **ambas cifras** (reloj y sesiones), con la aclaración de la pausa; el tiempo no se usa como medida de calidad.
 - Las horas salen de las marcas de tiempo de las transcripciones de Claude Code (UTC−5).
